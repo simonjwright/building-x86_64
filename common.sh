@@ -1,15 +1,18 @@
 # Ensure the GCC source tree already has required versions of GMP,
 # MPFR, MPC installed via contrib/download_prerequisites.
 
-VERSION=8.1.0
+VERSION=9.0.0
 TOP=/Volumes/Miscellaneous
 PREFIX=$TOP/tmp/opt/gcc-$VERSION
 BUILD=x86_64-apple-darwin15
 
 SRC_PATH=$TOP/tmp
-GCC_SRC=$SRC_PATH/gcc-$VERSION
+##### These are for development only
+GCC_SRC=$SRC_PATH/gcc
+GCC_BLD=$SRC_PATH/gcc-265766-build
+#####
 
-GCC_BOOT_FLAGS="-static-libstdc++ -static-libgcc -Wl,-headerpad_max_install_names"
+GCC_BOOT_LDFLAGS="-static-libstdc++ -static-libgcc -Wl,-headerpad_max_install_names"
 
 NEW_PATH=$PREFIX/bin:$PATH
 
